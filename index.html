@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
 
@@ -123,21 +123,39 @@
 
   <div class="col-lg-4 margin2">
   <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Username/Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
+   <!-- Main div code -->
+  <div id="main">
+    <div class="h-tag">
+    <h2>User? Please Log In</h2>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+    <!-- create account div -->
+    <div class="login">
+    <table cellspacing="2" align="center" cellpadding="10" border="0">
+    <tr>
+    <td align="right">Email ID</td>
+    <td><input type="text" placeholder="abcd@example.com" id="t2" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Password</td>
+    <td><input type="password" placeholder="Enter Your Password" id="t4" class="tb" /></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td>
+    <input type="reset" value="Clear Form" onclick="clearFunc()" id="res" class="btn btn-primary" />
+    <input type="submit" value="Log In" class="btn btn-primary" onclick="registration()" /></td>
+    </tr>
+    </table>
+    </div>
+    <!-- create account box ending here.. -->
     </div>
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+      <label class="form-check-label" for="exampleCheck1">Remember Me (Click on the Checkbox)</label>
     </div>
-    <a href="page_under_construction.html" class="btn btn-primary">Log In</button></a> Need an Account?
-    <a href="sign_up.html" class="btn btn-primary">Sign Up</button></a>
+    <h4>Need an Account?
+    <a href="sign_up.html" class="btn btn-primary">Sign Up</button></a></h4>
   </form>
 </div>
 
@@ -265,6 +283,8 @@
 <br>Developed & Maintained by ICT Academy of Kerala.
     </div>
   </div>
+
+<script src="JS/login.js"></script>
 
 </body>
 </html>
