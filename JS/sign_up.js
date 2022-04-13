@@ -38,17 +38,13 @@ function registration()
 		{
 			alert('Not a valid Phone Number');
 		}
-		else if(pwd=='')
-		{
-			alert('Please enter Password');
-		}
 		else if(cpwd=='')
 		{
 			alert('Enter Confirm Password');
 		}
-		else if(!pwd_expression.test(pwd))
+        else if(!pwd_expression.test(pwd))
 		{
-			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password field');
 		}
 		else if(pwd != cpwd)
 		{
@@ -64,7 +60,7 @@ function registration()
 		}
 		else
 		{				                            
-               alert('Thank You for Signing Up. Now, You will be Redirected to Kerala Tourism Home Page.');
+               alert('Thank You for Signing Up. Now, You will be Redirected to Kerala Tourism Website');
 			   // Redirecting to other page or webste code. 
 			   window.location = "index.html"; 
 		}
@@ -77,4 +73,21 @@ function registration()
 		document.getElementById("t4").value="";
 		document.getElementById("t5").value="";
 	}
-   
+	function passwordChanged() {
+        var strength = document.getElementById('strength');
+        var strongRegex = new RegExp("^(?=.{10,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+        var pwd = document.getElementById("t4");
+        if (pwd.value.length == 0) {
+            strength.innerHTML = 'Type Password';
+        } else if (false == enoughRegex.test(pwd.value)) {
+            strength.innerHTML = 'More Characters';
+        } else if (strongRegex.test(pwd.value)) {
+            strength.innerHTML = '<span style="color:green">Strong!</span>';
+        } else if (mediumRegex.test(pwd.value)) {
+            strength.innerHTML = '<span style="color:orange">Medium!</span>';
+        } else {
+            strength.innerHTML = '<span style="color:red">Weak!</span>';
+        }
+    }
