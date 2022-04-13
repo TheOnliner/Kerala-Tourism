@@ -9,14 +9,6 @@ function registration()
 		
         var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
-        //addition
-        var strength = document.getElementById('strength');
-        var strongRegex = new RegExp("^(?=.{12,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-        var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
-        var pwd = document.getElementById("password");
-        //
-
         //email id expression code
 		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
 		var letters = /^[A-Za-z]+$/;
@@ -54,22 +46,6 @@ function registration()
 		{
 			alert('Enter Confirm Password');
 		}
-
-        //Addition
-        else if (pwd.value.length == 0) {
-            strength.innerHTML = 'Type Password';
-        } else if (false == enoughRegex.test(pwd.value)) {
-            strength.innerHTML = 'More Characters';
-        } else if (strongRegex.test(pwd.value)) {
-            strength.innerHTML = '<span style="color:green">Strong!</span>';
-        } else if (mediumRegex.test(pwd.value)) {
-            strength.innerHTML = '<span style="color:orange">Medium!</span>';
-        } else {
-            strength.innerHTML = '<span style="color:red">Weak!</span>';
-        }
-        //
-        
-
 		else if(!pwd_expression.test(pwd))
 		{
 			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
@@ -88,7 +64,7 @@ function registration()
 		}
 		else
 		{				                            
-               alert('Thank You for Signing Up & You are Redirecting to Kerala Tourism Website');
+               alert('Thank You for Signing Up. Now, You will be Redirected to Kerala Tourism Home Page.');
 			   // Redirecting to other page or webste code. 
 			   window.location = "index.html"; 
 		}
