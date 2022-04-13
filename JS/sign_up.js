@@ -24,7 +24,7 @@ function registration()
 		}
 		else if(email=='')
 		{
-			alert('Please enter your user email id');
+			alert('Please enter your email id');
 		}
 		else if (!filter.test(email))
 		{
@@ -60,7 +60,7 @@ function registration()
 		}
 		else
 		{				                            
-               alert('Thank You for Signing Up. Now, You will be Redirected to Kerala Tourism Website');
+               alert('Thank You for Signing Up. Now, You will be Redirected to Kerala Tourism Website.');
 			   // Redirecting to other page or webste code. 
 			   window.location = "index.html"; 
 		}
